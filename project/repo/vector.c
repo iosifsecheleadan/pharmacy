@@ -6,13 +6,13 @@
 int size(Vector *v) {
     // returns size of Vector
 
-    return v->currentPosition;
+    return v->noElements;
 }
 
 void initializeVector(Vector* v, int length) {
     // Initializes a Vector of given length
     v->length = length;
-    v->currentPosition = 0;
+    v->noElements = 0;
     v->array = (Telem*) malloc(length * sizeof(Telem));
 }
 
@@ -50,20 +50,20 @@ Telem removePosition(Vector* v, int position) {
     // Removes and returns element on given position
     Telem temp = v->array[position];
     //destroyMedication(&(v->array[position]));
-    decreaseCurrent(v);
-    for (; position < v->currentPosition; position += 1) {
+    decreaseNoElements(v);
+    for (; position < v->noElements; position += 1) {
         setElement(v, getElement(v, position + 1), position);
     }
 
     return temp;
 }
 
-void increaseCurrent(Vector* v) {
-    v->currentPosition += 1;
+void increseNoElements(Vector* v) {
+    v->noElements += 1;
 }
 
-void decreaseCurrent(Vector *v) {
-    v->currentPosition -= 1;
+void decreaseNoElements(Vector *v) {
+    v->noElements -= 1;
 }
 
 

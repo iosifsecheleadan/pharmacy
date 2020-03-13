@@ -17,6 +17,8 @@ typedef struct {
 Id* initializeId(char *name, float concentration);
 
 
+Medication* initializeMedication(Medication get);
+
 Medication* initializeMedicine(char* name, float concentration, int quantity, float price);
 // Returns medicine with given properties
 

@@ -1,11 +1,11 @@
-#include "medication.h"
+#include "../domain/medication.h"
 
 typedef Medication Telem;
 
 typedef struct {
     int length;
     Telem *array;
-    int currentPosition;
+    int noElements;
 } Vector;
 
 void initializeVector(Vector*, int length);
@@ -27,9 +27,9 @@ void destroyVector(Vector*);
 Telem removePosition(Vector* , int position);
 // Removes and returns element on given position
 
-void increaseCurrent(Vector*);
+void increseNoElements(Vector*);
 
-void decreaseCurrent(Vector *v);
+void decreaseNoElements(Vector*);
 
 /*Iteration example:
  *  for (int index = 0; index < size(Vector); index += 1) {

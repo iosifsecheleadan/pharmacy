@@ -6,10 +6,22 @@
 
 
 Id* initializeId(char *name, float concentration) {
-    Id* id = (Id*) malloc (sizeof(id));
+    Id* id = (Id*) malloc (sizeof(Id));
     id->name = name;
     id->concentration = concentration;
     return id;
+}
+
+Medication *initializeMedication(Medication get) {
+    Medication* med = (Medication*) malloc(sizeof(Medication)); // allocation of medicine
+    med->id = (Id*) malloc(sizeof(Id));                         // allocation of Id
+
+    med->id->name = get.id->name;
+    med->id->concentration = get.id->concentration;
+    med->quantity = get.quantity;
+    med->price = get.price;
+
+    return med;
 }
 
 Medication* initializeMedicine(char* name, float concentration, int quantity, float price) {

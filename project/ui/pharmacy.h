@@ -1,16 +1,17 @@
-#include "vector.h"
+#include "../ctrl/controller.h"
 
 
 void start(Vector *);
 // Initialize pharmacy
 
-void addMedication(Vector*);
-// Reads and adds a Medication to list. If Medication already exists, updates quantity
-// Returns 1 if successful or 0 if Medication already exists
+void addHardcodedMedication(Vector*);
+// Adds some medication
 
-void removeMedicine(Vector* );
+void addMedication(Vector *pharmacy);
+// Reads and adds a Medication to list. If Medication already exists, updates quantity
+
+void removeMedication(Vector *pharmacy);
 // Reads a medicine Id and removes element with given Id
-// Returns 1 if successful or 0 otherwise
 
 void searchMedicationByName(Vector* );
 // Reads a string and prints all medications containing given word
